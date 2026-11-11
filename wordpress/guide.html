@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en" class="guide-doc"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light">
+<title>Acme Journal — WordPress admin — System guide</title><link rel="stylesheet" href="assets/book.css"></head>
+<body><header class="top"><div class="bar"><a class="brand" href="guide.html">Acme Journal — WordPress admin</a><nav class="mode" aria-label="Switch document"><a href="guide.html" aria-current="page"><b>System guide</b><small>Start here (one page)</small></a><a href="index.html"><b>Screen spec</b><small>Every screen, with specs and screenshots</small></a></nav></div></header>
+<main class="guide-main"><!-- model: claude-fable-5-1 -->
+<article class="guide">
+<header class="g-hero">
+<h1>Acme Journal — WordPress admin System guide</h1>
+<p class="g-lead">This is the administration area of the WordPress 7.1.4 site "Acme Journal". The people who run the site use it to write and publish posts and pages, upload media, moderate reader comments, choose the site's look, add plugins, manage user accounts and set site-wide options. This guide describes the 50 screens that were captured, as seen by an administrator on a local demo site with fictional content.</p>
+</header>
+
+<nav class="g-toc">
+<a href="#whatis">What you can do</a>
+<a href="#users">Who uses it</a>
+<a href="#map">Map of the screens</a>
+<a href="#flows">Main workflows</a>
+<a href="#features">Feature by feature</a>
+<a href="#rules">Rules</a>
+<a href="#terms">Terms</a>
+<a href="#open">Things to confirm</a>
+</nav>
+
+<section id="whatis">
+<h2>What you can do with this system</h2>
+<p>The admin area covers six kinds of work, each with its own group in the left-hand menu.</p>
+<div class="g-cards">
+<div class="g-card"><h3>Write and organise content</h3><p>Create and edit blog posts and fixed pages in the block editor. Group posts with categories (hierarchical) and tags (flat). Upload images and files to the Media Library for use in content.</p></div>
+<div class="g-card"><h3>Moderate comments</h3><p>Review comments left by readers, approve or unapprove them, reply, mark them as spam or move them to the trash. Comments waiting for moderation are highlighted and counted in a badge.</p></div>
+<div class="g-card"><h3>Shape the site's look</h3><p>Choose the active theme, install more themes from the public directory, edit the site's design with the block-based "Site Editor", and manage font families.</p></div>
+<div class="g-card"><h3>Extend with plugins</h3><p>Browse, search and install plugins from the WordPress Plugin Directory or upload a .zip file. Activate, deactivate or delete installed plugins and decide which ones update themselves.</p></div>
+<div class="g-card"><h3>Manage people and access</h3><p>Add user accounts, assign roles (Administrator, Editor, Author, Contributor, Subscriber), send password resets, and let each user maintain their own profile.</p></div>
+<div class="g-card"><h3>Maintain and configure the site</h3><p>Check updates and site health, import or export content, handle personal-data erasure requests, and set site-wide options for writing, reading, discussion, media, permalinks and privacy.</p></div>
+</div>
+</section>
+
+<section id="users">
+<h2>Who uses it and how</h2>
+<p>Administrators see every menu; what other roles see was not captured. The whole crawl was made with an already logged-in administrator account, so every screen in this guide reflects the administrator's view.</p>
+<ul>
+<li><strong>Administrator.</strong> Sees all ten menu groups: Dashboard, Posts, Media, Pages, Comments, Appearance, Plugins, Users, Tools and Settings. Installs themes and plugins, manages users, edits theme and plugin files, and changes settings.</li>
+<li><strong>Editor, Author, Contributor, Subscriber.</strong> These role names appear in the role filters and role dropdowns on the Users screens. Menus and actions are probably hidden or reduced for these roles (inferred). New accounts default to "Subscriber", the least-privileged role.</li>
+<li><strong>Every logged-in user.</strong> The "Profile" screen always shows the account of the person who is logged in and is probably available to every role (inferred). A user cannot change their own username or, on that screen, their own role.</li>
+</ul>
+<p>Common elements for all users: a dark toolbar across the top with the site name, a search shortcut, a comments counter, a "New" menu and the account menu. Most screens have "Screen Options" and "Help" tabs at the top right. "Collapse Menu" at the bottom of the left-hand menu probably narrows it to icons (inferred).</p>
+</section>
+
+<section id="map">
+<h2>Map of the screens</h2>
+<p>The screens follow the left-hand menu; content areas pair a list screen with an edit screen, and the About WordPress pages sit outside the menu under the toolbar logo. The tree below links every captured screen to its spec; see also the <a href="sections/wp-admin.html">WordPress admin section</a> and the <a href="overview.html">overview</a>.</p>
+<ul class="g-tree">
+<li><a href="pages/p001.html">Dashboard</a>
+<ul>
+<li><a href="pages/p002.html">Updates</a></li>
+</ul>
+</li>
+<li><a href="pages/p003.html">Posts</a> ("All Posts")
+<ul>
+<li><a href="pages/p035.html">Edit Post</a> (opened from a post title)</li>
+<li><a href="pages/p004.html">Categories</a>
+<ul><li><a href="pages/p036.html">Edit Category</a></li></ul>
+</li>
+<li><a href="pages/p005.html">Tags</a>
+<ul><li><a href="pages/p037.html">Edit Tag</a></li></ul>
+</li>
+</ul>
+</li>
+<li><a href="pages/p006.html">Media Library</a>
+<ul>
+<li><a href="pages/p007.html">Upload Media</a> ("Add Media File")</li>
+</ul>
+</li>
+<li><a href="pages/p008.html">Pages</a> ("All Pages")</li>
+<li><a href="pages/p009.html">Comments</a></li>
+<li>Appearance
+<ul>
+<li><a href="pages/p010.html">Themes</a>
+<ul><li><a href="pages/p038.html">Add Themes</a></li></ul>
+</li>
+<li><a href="pages/p011.html">Site Editor</a> ("Editor")</li>
+<li><a href="pages/p012.html">Fonts</a></li>
+</ul>
+</li>
+<li><a href="pages/p013.html">Plugins</a> ("Installed Plugins")
+<ul>
+<li><a href="pages/p014.html">Add Plugins</a> ("Featured" tab)
+<ul>
+<li><a href="pages/p041.html">Add Plugins — Popular</a></li>
+<li><a href="pages/p042.html">Add Plugins — Recommended</a></li>
+<li><a href="pages/p043.html">Add Plugins — Favorites</a></li>
+<li><a href="pages/p044.html">Add Plugins — Search</a></li>
+<li><a href="pages/p040.html">Add Plugins — Upload</a></li>
+<li><a href="pages/p039.html">Add Plugins — Plugin Information</a> (detail window)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="pages/p015.html">Users</a> ("All Users")
+<ul>
+<li><a href="pages/p045.html">Edit User</a> (opened from a username)</li>
+<li><a href="pages/p016.html">Add User</a></li>
+<li><a href="pages/p017.html">Profile</a></li>
+</ul>
+</li>
+<li><a href="pages/p018.html">Tools</a> ("Available Tools")
+<ul>
+<li><a href="pages/p019.html">Import</a></li>
+<li><a href="pages/p020.html">Export</a></li>
+<li><a href="pages/p021.html">Site Health — Status</a>
+<ul><li><a href="pages/p046.html">Site Health — Info</a></li></ul>
+</li>
+<li>"Export Personal Data" (listed in the submenu, not captured)</li>
+<li><a href="pages/p022.html">Erase Personal Data</a></li>
+<li><a href="pages/p023.html">Theme File Editor</a></li>
+<li><a href="pages/p024.html">Plugin File Editor</a></li>
+</ul>
+</li>
+<li>Settings
+<ul>
+<li><a href="pages/p025.html">General Settings</a></li>
+<li><a href="pages/p026.html">Connectors</a></li>
+<li><a href="pages/p027.html">Writing Settings</a></li>
+<li><a href="pages/p028.html">Reading Settings</a></li>
+<li><a href="pages/p029.html">Discussion Settings</a></li>
+<li><a href="pages/p030.html">Media Settings</a></li>
+<li><a href="pages/p031.html">Permalink Settings</a></li>
+<li><a href="pages/p032.html">Privacy Settings</a>
+<ul><li><a href="pages/p047.html">Privacy Policy Guide</a> ("Policy Guide" tab)</li></ul>
+</li>
+</ul>
+</li>
+<li>About WordPress (from the WordPress logo in the toolbar; no side-menu item)
+<ul>
+<li><a href="pages/p033.html">About</a> ("What’s New")</li>
+<li><a href="pages/p034.html">Get Involved</a></li>
+<li><a href="pages/p048.html">Credits</a></li>
+<li><a href="pages/p049.html">Freedoms</a></li>
+<li><a href="pages/p050.html">Privacy</a></li>
+</ul>
+</li>
+</ul>
+</section>
+
+<section id="flows">
+<h2>Main workflows</h2>
+<p>Four routine tasks show how the screens connect: editing a post, moderating a comment, adding a user, and installing a plugin. No button was pressed during the capture, so the result of each final step is described as the screens suggest it, not as observed.</p>
+
+<h3>Edit and save a post</h3>
+<ol class="g-steps">
+<li>Open <a href="pages/p003.html">Posts</a> and narrow the list with a status view ("All", "Mine", "Published", "Draft", "Pending"), the "Search Posts" box, or the date and category filters.</li>
+<li>Click a post title to open it in <a href="pages/p035.html">Edit Post</a>. On a first visit, close the "Welcome to the editor" dialog or step through it with "Next".</li>
+<li>Edit the title and body in the canvas, then adjust "Status", "Publish", "Slug", "Author", "Categories" and "Tags" in the "Post" tab of the sidebar.</li>
+<li>Press "Save". The button looks dimmed until there are unsaved changes (inferred).</li>
+<li>If a needed category or tag does not exist yet, create it first on <a href="pages/p004.html">Categories</a> or <a href="pages/p005.html">Tags</a>.</li>
+</ol>
+
+<h3>Moderate a reader comment</h3>
+<ol class="g-steps">
+<li>Notice the badge next to "Comments" in the menu, or the "[Pending]" flag in "Recent Comments" on the <a href="pages/p001.html">Dashboard</a>.</li>
+<li>Open <a href="pages/p009.html">Comments</a>. The pending comment is shown with a pale yellow background and a red left border.</li>
+<li>Hover the row and choose "Approve", "Reply", "Spam" or "Trash" (the row actions appear to be revealed on hover, inferred).</li>
+<li>For several comments, tick their checkboxes, pick "Approve", "Unapprove", "Mark as spam" or "Move to Trash" in "Bulk actions" and press "Apply".</li>
+<li>To change when comments are held for moderation, go to <a href="pages/p029.html">Discussion Settings</a>.</li>
+</ol>
+
+<h3>Give a new person access</h3>
+<ol class="g-steps">
+<li>Open <a href="pages/p015.html">Users</a> to check which accounts and roles already exist.</li>
+<li>Press "Add User" to open <a href="pages/p016.html">Add User</a>.</li>
+<li>Fill in "Username (required)" and "Email (required)", set the password, decide whether to keep "Send the new user an email about their account" ticked, and choose a "Role" (default "Subscriber").</li>
+<li>Press "Add User". This probably creates the account and returns to the user list (inferred).</li>
+<li>To change the role later, open the account in <a href="pages/p045.html">Edit User</a> or use "Change role to…" on the Users list.</li>
+</ol>
+
+<h3>Install and activate a plugin</h3>
+<ol class="g-steps">
+<li>Open <a href="pages/p013.html">Plugins</a> and press "Add Plugin".</li>
+<li>On <a href="pages/p014.html">Add Plugins</a>, browse the "Featured" cards, switch to <a href="pages/p041.html">Popular</a> or <a href="pages/p042.html">Recommended</a>, or type into "Search Plugins" to reach <a href="pages/p044.html">Search</a> results.</li>
+<li>Click "More Details" to read the <a href="pages/p039.html">Plugin Information</a> window: version, requirements, compatibility, ratings and reviews.</li>
+<li>Press "Install Now". The button probably turns into "Activate" once the plugin is installed (inferred). Plugins that are not in the directory can be installed from a .zip file on <a href="pages/p040.html">Add Plugins — Upload</a>.</li>
+<li>Back on <a href="pages/p013.html">Plugins</a>, activate the plugin and optionally press "Enable auto-updates".</li>
+</ol>
+</section>
+
+<section id="features">
+<h2>Feature by feature</h2>
+<p>Each category below shows a representative screen and lists what can be done there.</p>
+
+<h3>Dashboard and updates</h3>
+<figure class="g-shot"><a href="pages/p001.html"><img src="screenshots/p001.png" alt="Dashboard" loading="lazy"></a><figcaption>Dashboard: welcome panel plus the "Site Health Status", "At a Glance", "Activity", "Quick Draft" and "WordPress Events and News" widgets.</figcaption></figure>
+<ul>
+<li>See content counts ("7 Published posts", "5 Published pages", "2 Comments", "1 Comment in moderation") as links into the list screens.</li>
+<li>Read the five most recently published posts and the latest comments; pending comments are highlighted and offer inline moderation actions (inferred).</li>
+<li>Jot down a draft in "Quick Draft" with a "Title" and "Content" and press "Save Draft".</li>
+<li>Follow shortcuts in the welcome panel: "Add a new page", "Open site editor", "Edit styles"; hide the panel with "Dismiss".</li>
+<li>On <a href="pages/p002.html">Updates</a>, see "Current version: 7.1.4", the last check time, "Check again.", "Re-install version 7.1.4", and whether plugins and themes are up to date. Automatic updates for every new WordPress version are enabled on this site.</li>
+</ul>
+
+<h3>Posts, categories and tags</h3>
+<figure class="g-shot"><a href="pages/p003.html"><img src="screenshots/p003.png" alt="Posts" loading="lazy"></a><figcaption>Posts: status views with counts, search, date and category filters, bulk actions and sortable columns.</figcaption></figure>
+<figure class="g-shot"><a href="pages/p035.html"><img src="screenshots/p035.png" alt="Edit Post" loading="lazy"></a><figcaption>Edit Post: the block editor with a content canvas on the left and the "Post" / "Block" settings sidebar on the right.</figcaption></figure>
+<ul>
+<li>List posts with columns "Title", "Author", "Categories", "Tags", a comments column and "Date"; filter by status, month and category; sort by title, comment count and date.</li>
+<li>Act on rows with "Edit", "Quick Edit", "Trash" and "View" ("Preview" for drafts and pending posts), or use "Bulk edit" and "Move to Trash".</li>
+<li>Edit a post's title and body with blocks; set "Status", "Publish" date, "Slug", "Author", "Template", "Discussion", "Format", a featured image, an excerpt, categories and tags; "Move to trash".</li>
+<li>On <a href="pages/p004.html">Categories</a>, add a category with "Name", "Slug", "Parent Category" and "Description"; on <a href="pages/p036.html">Edit Category</a>, rename it, change its parent, or "Delete" it.</li>
+<li>On <a href="pages/p005.html">Tags</a>, add a tag with "Name", "Slug" and "Description" (no parent); on <a href="pages/p037.html">Edit Tag</a>, rename or delete it.</li>
+<li>Convert between categories and tags through the "category to tag converter" and "tag to category converter" links.</li>
+</ul>
+
+<h3>Media</h3>
+<figure class="g-shot"><a href="pages/p007.html"><img src="screenshots/p007.png" alt="Upload Media" loading="lazy"></a><figcaption>Upload Media: the "Drop files to upload" zone with a "Select Files" button and the 2 MB size limit.</figcaption></figure>
+<ul>
+<li>Browse the <a href="pages/p006.html">Media Library</a> in grid or list view; filter by type ("Images", "Audio", "Video", "Documents", "Spreadsheets", "Archives", "Unattached", "Mine") and by month; search with "Search media". The library was empty in the capture.</li>
+<li>Upload files by drag-and-drop or "Select Files"; fall back to the "browser uploader" if needed.</li>
+<li>Choose the generated image sizes and the upload folder structure on <a href="pages/p030.html">Media Settings</a>.</li>
+</ul>
+
+<h3>Pages</h3>
+<figure class="g-shot"><a href="pages/p008.html"><img src="screenshots/p008.png" alt="Pages" loading="lazy"></a><figcaption>Pages: the six fixed pages with status views, search, a date filter and bulk actions.</figcaption></figure>
+<ul>
+<li>List pages with "Title", "Author", a comments column and "Date"; filter by status ("All", "Mine", "Published", "Draft") and month; sort by title, comment count and date.</li>
+<li>Use "Edit", "Quick Edit", "Trash" and "View" / "Preview" per row, or "Bulk edit" and "Move to Trash".</li>
+<li>Press "Add Page" to create a new page. The page designated as the privacy policy is labelled "Privacy Policy Page" in the list.</li>
+</ul>
+
+<h3>Comments</h3>
+<figure class="g-shot"><a href="pages/p009.html"><img src="screenshots/p009.png" alt="Comments" loading="lazy"></a><figcaption>Comments: the moderation list with the pending comment highlighted.</figcaption></figure>
+<ul>
+<li>Filter by "All", "Mine", "Pending", "Approved", "Spam" and "Trash"; search with "Search Comments"; filter by comment type.</li>
+<li>Per comment: "Approve" or "Unapprove", "Reply", "Quick Edit", "Edit", "Spam", "Trash" (revealed on hover, inferred).</li>
+<li>In bulk: "Unapprove", "Approve", "Mark as spam", "Move to Trash".</li>
+<li>See for each comment the author, the post it answers ("In response to") with a "View Post" link and that post's comment counts, and "Submitted on".</li>
+</ul>
+
+<h3>Appearance</h3>
+<figure class="g-shot"><a href="pages/p010.html"><img src="screenshots/p010.png" alt="Themes" loading="lazy"></a><figcaption>Themes: the three installed themes with "Active: Twenty Twenty-Five" first and an "Add Theme" tile.</figcaption></figure>
+<figure class="g-shot"><a href="pages/p011.html"><img src="screenshots/p011.png" alt="Site Editor" loading="lazy"></a><figcaption>Site Editor: the "Design" panel with "Identity", "Styles", "Pages", "Navigation", "Patterns" and "Templates" beside the preview canvas.</figcaption></figure>
+<ul>
+<li>See which theme is active, "Customize" it, and "Activate" or "Live Preview" another installed theme (controls revealed on hover, inferred).</li>
+<li>On <a href="pages/p038.html">Add Themes</a>, browse the directory by "Popular", "Latest", "Block Themes" and "Favorites", search, use "Feature Filter", "Install" and "Preview", or "Upload Theme" from a ZIP file. Installed themes carry an "Installed" banner.</li>
+<li>In the Site Editor, edit site identity, global styles, page layouts, navigation menus, patterns and templates; a "Saved" indicator shows there are no unsaved changes.</li>
+<li>On <a href="pages/p012.html">Fonts</a>, review the families under "THEME" ("1 of 1 active"), switch variants on or off and press "Update", or add fonts through the "Upload" and "Install Fonts" tabs.</li>
+</ul>
+
+<h3>Plugins</h3>
+<figure class="g-shot"><a href="pages/p013.html"><img src="screenshots/p013.png" alt="Plugins" loading="lazy"></a><figcaption>Plugins: the two installed, inactive plugins with "Activate", "Delete" and the "Automatic Updates" column.</figcaption></figure>
+<figure class="g-shot"><a href="pages/p014.html"><img src="screenshots/p014.png" alt="Add Plugins" loading="lazy"></a><figcaption>Add Plugins: the "Featured" tab with plugin cards, "Install Now" buttons and the "Popular tags" cloud.</figcaption></figure>
+<ul>
+<li>List installed plugins with description, version and author; filter by "All", "Inactive" and "Auto-updates Disabled"; search installed plugins.</li>
+<li>Per plugin: "Activate", "Delete", "Enable auto-updates", "View details". In bulk: "Activate", "Deactivate", "Update", "Delete", "Enable Auto-updates", "Disable Auto-updates".</li>
+<li>Find plugins by "Featured", "Popular" (74,726 items over 2,076 pages), "Recommended", "Favorites" (by WordPress.org username) or a search by "Keyword", "Author" or "Tag".</li>
+<li>Each card shows rating, "Last Updated", active installations and either "Compatible with your version of WordPress" or "Untested with your version of WordPress".</li>
+<li>Install from a .zip file with "Upload Plugin"; the same form installs or updates a plugin.</li>
+</ul>
+
+<h3>Users</h3>
+<figure class="g-shot"><a href="pages/p015.html"><img src="screenshots/p015.png" alt="Users" loading="lazy"></a><figcaption>Users: the four accounts with role filter, "Bulk actions" and "Change role to…".</figcaption></figure>
+<ul>
+<li>List users with "Username", "Name", "Email", "Role" and "Posts"; filter by role; sort by username or email.</li>
+<li>Per user: "Edit", "Delete", "View", "Send password reset" (only "Edit" and "View" for the logged-in user). In bulk: "Delete", "Send password reset", and "Change role to…".</li>
+<li>Create an account on <a href="pages/p016.html">Add User</a> with a generated or typed password, a notification email and a role.</li>
+<li>On <a href="pages/p045.html">Edit User</a>, change another user's "Role", details and password, or "Send Reset Link", then "Update User".</li>
+<li>On <a href="pages/p017.html">Profile</a>, set personal options ("Administration Color Scheme", "Language", "Toolbar" and more), name, contact info, biography, a new password, and "Log Out Everywhere Else"; press "Update Profile".</li>
+</ul>
+
+<h3>Tools</h3>
+<figure class="g-shot"><a href="pages/p021.html"><img src="screenshots/p021.png" alt="Site Health — Status" loading="lazy"></a><figcaption>Site Health — Status: the "Should be improved" verdict with critical issues and recommended improvements.</figcaption></figure>
+<figure class="g-shot"><a href="pages/p020.html"><img src="screenshots/p020.png" alt="Export" loading="lazy"></a><figcaption>Export: choose "All content", "Posts", "Pages" or "Media" and press "Download Export File".</figcaption></figure>
+<ul>
+<li>The <a href="pages/p018.html">Tools</a> landing screen holds one card, "Categories and Tags Converter", pointing to Import.</li>
+<li>On <a href="pages/p019.html">Import</a>, pick one of seven importers ("Blogger", "Categories and Tags Converter", "LiveJournal", "Movable Type and TypePad", "RSS", "Tumblr", "WordPress"), each with "Install Now | Details".</li>
+<li>Export content as a WXR (WordPress eXtended RSS) XML file for backup or migration.</li>
+<li>Check <a href="pages/p021.html">Site Health — Status</a> for issues grouped by severity, each labelled "Performance" or "Security", and <a href="pages/p046.html">Site Health — Info</a> for 10 collapsible configuration sections and "Copy site info to clipboard".</li>
+<li>On <a href="pages/p022.html">Erase Personal Data</a>, register a request by "Username or email address", optionally send a confirmation email, and track requests by "Requester", "Status", "Requested" and "Next steps".</li>
+<li>Edit theme and plugin source files directly in the <a href="pages/p023.html">Theme File Editor</a> and <a href="pages/p024.html">Plugin File Editor</a> after acknowledging the "Heads up!" warning; save with "Update File".</li>
+</ul>
+
+<h3>Settings</h3>
+<figure class="g-shot"><a href="pages/p025.html"><img src="screenshots/p025.png" alt="General Settings" loading="lazy"></a><figcaption>General Settings: site title, tagline, addresses, membership, language, timezone and date and time formats.</figcaption></figure>
+<figure class="g-shot"><a href="pages/p029.html"><img src="screenshots/p029.png" alt="Discussion Settings" loading="lazy"></a><figcaption>Discussion Settings: comment defaults, moderation rules, email notifications and avatars.</figcaption></figure>
+<ul>
+<li><a href="pages/p025.html">General</a>: "Site Title", "Tagline", site icon, "WordPress Address (URL)", "Site Address (URL)", "Administration Email Address", "Anyone can register", "New User Default Role", "Site Language", "Timezone", "Date Format", "Time Format", "Week Starts On".</li>
+<li><a href="pages/p026.html">Connectors</a>: install or activate shared credentials for "Akismet Anti-spam", "Anthropic", "Google" and "OpenAI"; "Install the AI plugin".</li>
+<li><a href="pages/p027.html">Writing</a>: "Default Post Category", "Default Post Format", "Post via email" mailbox settings, "Default Mail Category", "Update Services".</li>
+<li><a href="pages/p028.html">Reading</a>: homepage mode ("Your latest posts" or "A static page (select below)"), posts per archive page and per feed, "Full text" or "Excerpt" in feeds, "Discourage search engines from indexing this site".</li>
+<li><a href="pages/p029.html">Discussion</a>: who may comment, threading, pagination, "Email me whenever" notifications, approval rules, "Comment Moderation" and "Disallowed Comment Keys" word lists, avatars.</li>
+<li><a href="pages/p030.html">Media</a>: "Thumbnail size", "Medium size", "Large size", and "Organize my uploads into month- and year-based folders".</li>
+<li><a href="pages/p031.html">Permalinks</a>: "Plain", "Day and name", "Month and name", "Numeric", "Post name" or "Custom Structure" built from tags such as "%postname%"; optional "Category base" and "Tag base".</li>
+<li><a href="pages/p032.html">Privacy</a>: "Create" a new privacy policy page or "Use This Page" for an existing one; the <a href="pages/p047.html">Policy Guide</a> tab supplies a template and suggested wording.</li>
+</ul>
+
+<h3>About WordPress</h3>
+<figure class="g-shot"><a href="pages/p033.html"><img src="screenshots/p033.png" alt="About" loading="lazy"></a><figcaption>About: the "What’s New" page for WordPress 7.1.4 with maintenance releases and feature highlights.</figcaption></figure>
+<ul>
+<li>Read what changed in the installed version, the "Maintenance and Security Releases" list, and links to release notes.</li>
+<li>Browse the static <a href="pages/p034.html">Get Involved</a>, <a href="pages/p048.html">Credits</a>, <a href="pages/p049.html">Freedoms</a> and <a href="pages/p050.html">Privacy</a> pages. They describe the WordPress software and community, not the Acme Journal site, and have no function for running it.</li>
+</ul>
+</section>
+
+<section id="rules">
+<h2>Rules</h2>
+<p>The table lists the business rules, display conditions and constraints found on the screens, with how certain each one is.</p>
+<table class="g-table">
+<thead><tr><th>Rule</th><th>Which screen</th><th>Confidence</th></tr></thead>
+<tbody>
+<tr><td>Links that change data (trash, approve, activate, delete) carry a one-time token in the URL.</td><td>All screens</td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A badge next to "Comments" in the menu shows the number of comments awaiting moderation.</td><td>All screens</td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Menus and actions are reduced for roles below Administrator.</td><td>All screens</td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>A post is Published, Draft or Pending; unpublished posts show their status after the title and "Last Modified" instead of "Published".</td><td><a href="pages/p003.html">Posts</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>The comments column shows approved comments in a grey bubble and pending ones in a red badge; "—" means no comments.</td><td><a href="pages/p003.html">Posts</a>, <a href="pages/p009.html">Comments</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>"Mine" counts the items whose author is the logged-in user.</td><td><a href="pages/p003.html">Posts</a>, <a href="pages/p008.html">Pages</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>"Uncategorized" is the default category, has no checkbox and no "Delete" action, and cannot be deleted.</td><td><a href="pages/p004.html">Categories</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Deleting a category does not delete its posts; posts only in that category are set to "Uncategorized".</td><td><a href="pages/p004.html">Categories</a>, <a href="pages/p036.html">Edit Category</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A category cannot be its own parent; the edited category is left out of the "Parent Category" options.</td><td><a href="pages/p036.html">Edit Category</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Tags have no hierarchy and no parent field.</td><td><a href="pages/p005.html">Tags</a>, <a href="pages/p037.html">Edit Tag</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>The "Count" column for categories and tags counts published posts only.</td><td><a href="pages/p004.html">Categories</a>, <a href="pages/p005.html">Tags</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>Uploads are limited to 2 MB per file ("Maximum upload file size: 2 MB.").</td><td><a href="pages/p007.html">Upload Media</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A file larger than 2 MB is rejected with an error message.</td><td><a href="pages/p007.html">Upload Media</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>Pages have no categories or tags; one page can be designated as the privacy policy page and is labelled "Privacy Policy Page".</td><td><a href="pages/p008.html">Pages</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A comment is Pending, Approved, Spam or Trash; a pending comment is shown with a yellow background and red left border.</td><td><a href="pages/p009.html">Comments</a>, <a href="pages/p001.html">Dashboard</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>With the captured settings, a first-time commenter's comment is held until approved; later comments from the same author appear without approval.</td><td><a href="pages/p029.html">Discussion Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A comment with more than 2 links or a listed word is held for moderation; one containing a disallowed word goes to the Trash.</td><td><a href="pages/p029.html">Discussion Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Default post settings for comments apply only to new posts and may be overridden per post.</td><td><a href="pages/p029.html">Discussion Settings</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>Exactly one theme is active at a time; installing a theme and activating it are separate steps.</td><td><a href="pages/p010.html">Themes</a>, <a href="pages/p038.html">Add Themes</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>The active theme is a block theme, since "Appearance" shows only "Themes", "Editor" and "Fonts".</td><td><a href="pages/p010.html">Themes</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>A plugin must be inactive before it can be deleted; "Delete" appears only next to "Activate".</td><td><a href="pages/p013.html">Plugins</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>The button on a directory card reflects the plugin's state on this site: "Install Now" when absent, "Activate" when installed and inactive.</td><td><a href="pages/p014.html">Add Plugins</a>, <a href="pages/p041.html">Popular</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>The compatibility line compares the plugin's tested version with the site's WordPress version ("Compatible" or "Untested").</td><td><a href="pages/p041.html">Add Plugins — Popular</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Plugin and theme lists on the Add screens come from WordPress.org and need an outside connection.</td><td><a href="pages/p014.html">Add Plugins</a>, <a href="pages/p038.html">Add Themes</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>A user cannot delete their own account or send themselves a password reset from the list; their row offers only "Edit | View".</td><td><a href="pages/p015.html">Users</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>New accounts default to "Subscriber"; "Username (required)" and "Email (required)" are mandatory.</td><td><a href="pages/p016.html">Add User</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Usernames cannot be changed.</td><td><a href="pages/p017.html">Profile</a>, <a href="pages/p045.html">Edit User</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A changed email address does not become active until it is confirmed from the new address.</td><td><a href="pages/p017.html">Profile</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>A changed "Administration Email Address" does not become active until confirmed.</td><td><a href="pages/p025.html">General Settings</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>"Send Reset Link" does not change the user's password nor force a change.</td><td><a href="pages/p045.html">Edit User</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Application Passwords require HTTPS and are unavailable on this site.</td><td><a href="pages/p017.html">Profile</a>, <a href="pages/p045.html">Edit User</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Automatic updates for every new WordPress version are enabled on this site.</td><td><a href="pages/p002.html">Updates</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Importers are separate plugins that must be installed before use; the "WordPress" importer reads the file produced by Export.</td><td><a href="pages/p019.html">Import</a>, <a href="pages/p020.html">Export</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Export produces a file and leaves site content unchanged.</td><td><a href="pages/p020.html">Export</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>Critical site-health issues are meant to be resolved before recommended ones; the Tools submenu badge shows the number of critical issues.</td><td><a href="pages/p021.html">Site Health — Status</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Erasure is a two-stage process: a request is recorded first and acted on later, with email confirmation by default.</td><td><a href="pages/p022.html">Erase Personal Data</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>Direct edits to theme or plugin files may be lost on the next update and could break the site; a "Heads up!" dialog must be acknowledged first.</td><td><a href="pages/p023.html">Theme File Editor</a>, <a href="pages/p024.html">Plugin File Editor</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Edits to style.css may have no visible effect because a minified stylesheet is served to visitors.</td><td><a href="pages/p023.html">Theme File Editor</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>"New User Default Role" only matters when "Anyone can register" is ticked.</td><td><a href="pages/p025.html">General Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Any mail received at the "Post via email" mailbox is published as a post, so the mailbox address must be kept secret.</td><td><a href="pages/p027.html">Writing Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>"Discourage search engines from indexing this site" is a request, not a block.</td><td><a href="pages/p028.html">Reading Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>The "Homepage:" and "Posts page:" selects are greyed out while "Your latest posts" is selected.</td><td><a href="pages/p028.html">Reading Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Changed image sizes apply only to images uploaded after the change.</td><td><a href="pages/p030.html">Media Settings</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>Changing the permalink structure changes existing links; old addresses stop matching unless redirects exist.</td><td><a href="pages/p031.html">Permalink Settings</a></td><td><span class="g-guess">Inferred</span></td></tr>
+<tr><td>A site has one designated privacy policy page at a time; unpublished pages can apparently be designated.</td><td><a href="pages/p032.html">Privacy Settings</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Keeping the privacy policy accurate is the site owner's responsibility; it should be reviewed after themes or plugins are installed or updated.</td><td><a href="pages/p032.html">Privacy Settings</a>, <a href="pages/p047.html">Privacy Policy Guide</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>Credentials entered in Connectors are shared across plugins.</td><td><a href="pages/p026.html">Connectors</a></td><td><span class="g-ok">Verified</span></td></tr>
+<tr><td>The site may send its version and its list of installed plugins and themes to WordPress.org.</td><td><a href="pages/p050.html">Privacy</a></td><td><span class="g-ok">Verified</span></td></tr>
+</tbody>
+</table>
+</section>
+
+<section id="terms">
+<h2>Terms</h2>
+<p>These words have a specific meaning in this system.</p>
+<dl class="g-terms">
+<dt>Post</dt><dd>A dated blog entry with one author, one or more categories, optional tags, a status and comments. Listed on "Posts".</dd>
+<dt>Page</dt><dd>A fixed, undated piece of content such as "About" or "Contact". Pages have no categories or tags.</dd>
+<dt>Category</dt><dd>A hierarchical label for posts; a category can have a "Parent Category". "Uncategorized" is the default and cannot be deleted.</dd>
+<dt>Tag</dt><dd>A flat keyword label for posts, with no hierarchy.</dd>
+<dt>Slug</dt><dd>The part of a web address that identifies a post, page, category or tag, for example "meet-the-team".</dd>
+<dt>Published / Draft / Pending</dt><dd>Post and page statuses. Published items are public; a Draft is unfinished; Pending means waiting for review.</dd>
+<dt>Pending comment / Moderation</dt><dd>A comment that is held until someone approves it. Pending comments are counted in the badge next to "Comments".</dd>
+<dt>Quick Edit / Bulk edit</dt><dd>Row and bulk actions on list screens for changing fields without opening the full editor. Their fields were not captured.</dd>
+<dt>Block editor</dt><dd>The editing interface used on "Edit Post" and in the "Site Editor", where content is built from blocks.</dd>
+<dt>Theme</dt><dd>The package that controls the public site's look. Exactly one theme is active; "Twenty Twenty-Five" is active here.</dd>
+<dt>Block theme</dt><dd>A theme whose design is edited with the block-based "Site Editor" (probably the case here, inferred).</dd>
+<dt>Plugin</dt><dd>An extension that adds features. Plugins are installed, then activated separately; "Akismet Anti-spam: Spam Protection" and "Hello Dolly" are installed but inactive.</dd>
+<dt>Role</dt><dd>A user's permission level: Administrator, Editor, Author, Contributor or Subscriber.</dd>
+<dt>Featured image / Excerpt</dt><dd>An image and a short summary attached to a post in the "Post" tab of the editor.</dd>
+<dt>Permalink</dt><dd>The permanent public address pattern of posts and archives, chosen on "Permalink Settings".</dd>
+<dt>WXR</dt><dd>"WordPress eXtended RSS", the XML file format produced by "Export" and read by the "WordPress" importer.</dd>
+<dt>Site Health</dt><dd>Automatic checks of the installation, grouped into critical issues, recommended improvements and passed tests, with an "Info" tab of configuration data.</dd>
+<dt>Connector</dt><dd>A stored API key or credential for an external service, shared across plugins, on the "Connectors" settings screen.</dd>
+<dt>Gravatar</dt><dd>An external service that supplies profile pictures by email address; the "Profile" screen links to it.</dd>
+<dt>Application Passwords</dt><dd>A feature for giving applications their own login credentials. It requires HTTPS and is unavailable on this site.</dd>
+<dt>Update Services</dt><dd>Addresses notified when a post is published, listed on "Writing Settings".</dd>
+</dl>
+</section>
+
+<section id="open">
+<h2>Things to confirm</h2>
+<p>These points were not observable in the read-only capture and should be checked with the site's users or developers.</p>
+<ul>
+<li><strong>Other roles.</strong> What Editor, Author, Contributor and Subscriber accounts see; only the administrator view was captured. Can non-administrators open Users, Tools or Settings? Do authors see all media files or only their own?</li>
+<li><strong>Results of actions.</strong> Nothing was clicked or submitted, so what happens after "Save Changes", "Apply", "Install Now", "Publish", "Save", "Update File", "Add User" or "Send Request" is unknown.</li>
+<li><strong>Confirmation dialogs.</strong> Whether "Trash", "Delete", "Spam", "Activate", "Move to trash" and "Re-install version 7.1.4" ask for confirmation before acting.</li>
+<li><strong>Add Post.</strong> The "Add Post" screen was deliberately not opened because WordPress creates an auto-draft on load. Its layout is probably the same as "Edit Post".</li>
+<li><strong>Hidden fields.</strong> The "Password" row on "Add User" and the "New Password" row on "Profile" and "Edit User" were not visible in the captures.</li>
+<li><strong>Quick Edit and Bulk edit.</strong> Which fields they expose on Posts, Pages, Categories, Tags and Comments.</li>
+<li><strong>Pagination.</strong> How many rows the Posts, Pages and Users lists show before pagination appears, and whether Add Themes loads more cards on scroll.</li>
+<li><strong>Comments.</strong> Whether replying to a pending comment also approves it, who receives the "Email me whenever" messages, what a "note" is in "Anyone posts a note", and whether moderation changes affect comments already waiting.</li>
+<li><strong>Pages.</strong> Why four published pages have no author, and whether "Privacy Policy Draft" (published) is intentionally separate from the draft "Privacy Policy" page. Why "Privacy Policy" is offered on Privacy Settings but not in the Reading Settings page selects.</li>
+<li><strong>Media.</strong> Which file types are accepted, what the grid and the attachment details look like once files exist, and whether existing images are regenerated when sizes change.</li>
+<li><strong>Appearance.</strong> Why the Site Editor canvas is blank in the capture, whether theme-supplied fonts can be deleted, whether "Install Fonts" contacts an external service, and where an inactive theme is deleted from.</li>
+<li><strong>Plugins.</strong> What the Add Plugins screens show when WordPress.org cannot be reached, why the recommended list equals the featured list, whether the installed-plugin list is sent to WordPress.org, and the maximum upload size for plugin .zip files.</li>
+<li><strong>Users.</strong> What happens to a user's posts when the user is deleted, what "— No role for this site —" does, where the display name shown on "Edit User" is stored, and whether the notification email contains the password or a link.</li>
+<li><strong>Tools.</strong> What each Site Health issue shows when expanded and whether copied site info masks private values; which statuses and "Next steps" an erasure request goes through; whether the file editors are disabled in production.</li>
+<li><strong>Settings.</strong> Whether posting by email is actually active, how often the mailbox is checked, whether the permalink change creates redirects, and how stored connector API keys are protected.</li>
+<li><strong>Out of scope.</strong> The login screen and the public-facing site were not captured. Three addresses that duplicated other screens are not repeated in this guide.</li>
+</ul>
+</section>
+</article>
+</main>
+<footer>claude-fable-5-1 wrote this guide from per-screen specs that were built from a read-only browser crawl and screenshots. Items marked “Inferred” or “To confirm” need checking against the original design documents or the developers. The evidence is in the screen spec: each screen's spec items and screenshots.</footer>
+</body></html>
